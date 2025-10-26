@@ -45,4 +45,49 @@ class DataIngestionConfig:
         self.database_name: str = training_pipeline.DATA_INGESTION_DATABASE_NAME
 
 
+class DataValidationConfig:
+    def __init__(self, training_pipeline_config: TrainingPipelineConfig):
+        # Base Data Validation Directory
+        self.data_validation_dir: str = os.path.join(
+            training_pipeline_config.artifact_dir, 
+            training_pipeline.DATA_VALIDATION_DIR_NAME
+        )
         
+        # Valid Data Directory
+        self.valid_data_dir: str = os.path.join(
+            self.data_validation_dir, 
+            training_pipeline.DATA_VALIDATION_VALID_DIR
+        )
+        
+        # Invalid Data Directory
+        self.invalid_data_dir: str = os.path.join(
+            self.data_validation_dir, 
+            training_pipeline.DATA_VALIDATION_INVALID_DIR
+        )
+        
+        # Paths for Validated Split Files
+        self.valid_train_file_path: str = os.path.join(
+            self.valid_data_dir, 
+            training_pipeline.TRAIN_FILE_NAME
+        )
+        self.valid_test_file_path: str = os.path.join(
+            self.valid_data_dir, 
+            training_pipeline.TEST_FILE_NAME
+        )
+        
+        # Paths for Invalid Split Files
+        self.invalid_train_file_path: str = os.path.join(
+            self.invalid_data_dir, 
+            training_pipeline.TRAIN_FILE_NAME
+        )
+        self.invalid_test_file_path: str = os.path.join(
+            self.invalid_data_dir, 
+            training_pipeline.TEST_FILE_NAME
+        )
+        
+        # Path for the Data Drift Report (YAML file)
+        self.drift_report_file_path: str = os.path.join(
+            self.data_validation_dir,
+            training_pipeline.DATA_VALIDATION_DRIFT_REPORT_DIR,
+            training_pipeline.DATA_VALIDATION_DRIFT_REPORT_FILE_NAME,
+        )        
