@@ -1,0 +1,41 @@
+[ 2025-10-27 18:38:17,971 ] 18 root - INFO - Initiate the data ingestion
+[ 2025-10-27 18:38:38,939 ] 41 root - INFO - Data loaded from MongoDB: (11055, 31)
+[ 2025-10-27 18:38:38,993 ] 55 root - INFO - Data exported to feature store at: Artifacts\10_27_2025_18_38_16\data_ingestion\feature_store\feature_store.csv
+[ 2025-10-27 18:38:39,034 ] 79 root - INFO - Train and Test data saved at Artifacts\10_27_2025_18_38_16\data_ingestion
+[ 2025-10-27 18:38:39,034 ] 96 root - INFO - Data Ingestion completed successfully.
+[ 2025-10-27 18:38:39,034 ] 20 root - INFO - Data Initiation Completed
+[ 2025-10-27 18:38:39,034 ] 26 root - INFO - Initiate the data validation
+[ 2025-10-27 18:38:39,099 ] 37 root - INFO - Required number of columns: 31
+[ 2025-10-27 18:38:39,099 ] 38 root - INFO - Data frame has columns: 31
+[ 2025-10-27 18:38:39,099 ] 37 root - INFO - Required number of columns: 31
+[ 2025-10-27 18:38:39,099 ] 38 root - INFO - Data frame has columns: 31
+[ 2025-10-27 18:38:39,211 ] 28 root - INFO - Data validation Completed
+[ 2025-10-27 18:38:39,211 ] 33 root - INFO - Data Transformation Confirmation
+[ 2025-10-27 18:38:39,211 ] 61 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2025-10-27 18:38:39,211 ] 64 root - INFO - Starting data transformation
+[ 2025-10-27 18:38:39,266 ] 74 root - INFO - Read train data with shape: (8844, 31)
+[ 2025-10-27 18:38:39,266 ] 75 root - INFO - Read test data with shape: (2211, 31)
+[ 2025-10-27 18:38:39,266 ] 87 root - INFO - Separated features and target variables
+[ 2025-10-27 18:38:39,266 ] 88 root - INFO - Training features shape: (8844, 30)
+[ 2025-10-27 18:38:39,266 ] 89 root - INFO - Testing features shape: (2211, 30)
+[ 2025-10-27 18:38:39,266 ] 46 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[ 2025-10-27 18:38:39,266 ] 50 root - INFO - Initialised KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-10-27 18:38:39,266 ] 54 root - INFO - Created preprocessing pipeline with KNNImputer
+[ 2025-10-27 18:38:39,266 ] 98 root - INFO - Applied preprocessing transformation
+[ 2025-10-27 18:38:39,266 ] 104 root - INFO - Combined train array shape: (8844, 31)
+[ 2025-10-27 18:38:39,266 ] 105 root - INFO - Combined test array shape: (2211, 31)
+[ 2025-10-27 18:38:39,282 ] 59 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-10-27 18:38:39,282 ] 63 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-10-27 18:38:39,282 ] 121 root - INFO - Saved all transformed data and preprocessor object
+[ 2025-10-27 18:38:39,282 ] 130 root - INFO - Data transformation completed successfully
+[ 2025-10-27 18:38:39,282 ] 131 root - INFO - Created artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\10_27_2025_18_38_16\\10_27_2025_18_38_16\\data_transformation\\transformed_object\\preprocessor.pkl', transformed_train_file_path='Artifacts\\10_27_2025_18_38_16\\10_27_2025_18_38_16\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\10_27_2025_18_38_16\\10_27_2025_18_38_16\\data_transformation\\transformed\\test.npy')
+[ 2025-10-27 18:38:39,282 ] 36 root - INFO - Data Transformation Completed
+[ 2025-10-27 18:38:39,282 ] 40 root - INFO - Model Training started
+[ 2025-10-27 18:38:39,307 ] 150 root - INFO - Training data shape: (8844, 30), Test data shape: (2211, 30)
+[ 2025-10-27 18:38:39,309 ] 151 root - INFO - Training target unique values: {np.float64(0.0), np.float64(1.0)}
+[ 2025-10-27 18:38:39,309 ] 79 root - INFO - Starting model evaluation with all classifiers
+[ 2025-10-27 18:41:36,602 ] 98 root - INFO - Best model found: Random Forest with score: 0.8710013502475453
+[ 2025-10-27 18:41:47,065 ] 59 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-10-27 18:41:47,080 ] 63 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-10-27 18:41:47,080 ] 127 root - INFO - Model trainer artifact: ModelTrainerArtifact(trained_model_file_path='Artifacts\\10_27_2025_18_38_16\\10_27_2025_18_38_16\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.9915538821613921, precision_score=0.989238578680203, recall_score=0.9938800489596084), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.9723101265822784, precision_score=0.9654359780047133, recall_score=0.9792828685258964))
+[ 2025-10-27 18:41:47,080 ] 44 root - INFO - Model Training artifact created

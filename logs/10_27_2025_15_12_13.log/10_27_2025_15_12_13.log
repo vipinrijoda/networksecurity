@@ -1,0 +1,33 @@
+[ 2025-10-27 15:12:13,753 ] 18 root - INFO - Initiate the data ingestion
+[ 2025-10-27 15:12:34,795 ] 41 root - INFO - Data loaded from MongoDB: (11055, 31)
+[ 2025-10-27 15:12:34,842 ] 55 root - INFO - Data exported to feature store at: Artifacts\10_27_2025_15_12_13\data_ingestion\feature_store\feature_store.csv
+[ 2025-10-27 15:12:34,888 ] 79 root - INFO - Train and Test data saved at Artifacts\10_27_2025_15_12_13\data_ingestion
+[ 2025-10-27 15:12:34,888 ] 96 root - INFO - Data Ingestion completed successfully.
+[ 2025-10-27 15:12:34,888 ] 20 root - INFO - Data Initiation Completed
+[ 2025-10-27 15:12:34,904 ] 26 root - INFO - Initiate the data validation
+[ 2025-10-27 15:12:34,965 ] 37 root - INFO - Required number of columns: 31
+[ 2025-10-27 15:12:34,965 ] 38 root - INFO - Data frame has columns: 31
+[ 2025-10-27 15:12:34,965 ] 37 root - INFO - Required number of columns: 31
+[ 2025-10-27 15:12:34,965 ] 38 root - INFO - Data frame has columns: 31
+[ 2025-10-27 15:12:35,077 ] 28 root - INFO - Data validation Completed
+[ 2025-10-27 15:12:35,077 ] 33 root - INFO - Data Transformation Confirmation
+[ 2025-10-27 15:12:35,077 ] 61 root - INFO - Entered initiate_data_transformation method of DataTransformation class
+[ 2025-10-27 15:12:35,077 ] 64 root - INFO - Starting data transformation
+[ 2025-10-27 15:12:35,131 ] 74 root - INFO - Read train data with shape: (8844, 31)
+[ 2025-10-27 15:12:35,131 ] 75 root - INFO - Read test data with shape: (2211, 31)
+[ 2025-10-27 15:12:35,131 ] 87 root - INFO - Separated features and target variables
+[ 2025-10-27 15:12:35,131 ] 88 root - INFO - Training features shape: (8844, 30)
+[ 2025-10-27 15:12:35,131 ] 89 root - INFO - Testing features shape: (2211, 30)
+[ 2025-10-27 15:12:35,131 ] 46 root - INFO - Entered get_data_transformer_object method of DataTransformation class
+[ 2025-10-27 15:12:35,131 ] 50 root - INFO - Initialised KNNImputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2025-10-27 15:12:35,131 ] 54 root - INFO - Created preprocessing pipeline with KNNImputer
+[ 2025-10-27 15:12:35,131 ] 98 root - INFO - Applied preprocessing transformation
+[ 2025-10-27 15:12:35,147 ] 104 root - INFO - Combined train array shape: (8844, 31)
+[ 2025-10-27 15:12:35,147 ] 105 root - INFO - Combined test array shape: (2211, 31)
+[ 2025-10-27 15:12:35,150 ] 59 root - INFO - Entered the save_object method of MainUtils class
+[ 2025-10-27 15:12:35,155 ] 63 root - INFO - Exited the save_object method of MainUtils class
+[ 2025-10-27 15:12:35,155 ] 121 root - INFO - Saved all transformed data and preprocessor object
+[ 2025-10-27 15:12:35,155 ] 130 root - INFO - Data transformation completed successfully
+[ 2025-10-27 15:12:35,155 ] 131 root - INFO - Created artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\10_27_2025_15_12_13\\10_27_2025_15_12_13\\data_transformation\\transformed_object\\preprocessor.pkl', transformed_train_file_path='Artifacts\\10_27_2025_15_12_13\\10_27_2025_15_12_13\\data_transformation\\transformed\\train.npy', transformed_test_file_path='Artifacts\\10_27_2025_15_12_13\\10_27_2025_15_12_13\\data_transformation\\transformed\\test.npy')
+[ 2025-10-27 15:12:35,155 ] 36 root - INFO - Data Transformation Completed
+[ 2025-10-27 15:12:35,155 ] 40 root - INFO - Model Training started

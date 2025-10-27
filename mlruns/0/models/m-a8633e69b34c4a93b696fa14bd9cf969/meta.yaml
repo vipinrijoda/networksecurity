@@ -1,0 +1,10 @@
+artifact_location: file:///D:/ML%20BY%20KRISH%20NAIK/Network%20Security%20Porject/mlruns/0/models/m-a8633e69b34c4a93b696fa14bd9cf969/artifacts
+creation_timestamp: 1761570703710
+experiment_id: '0'
+last_updated_timestamp: 1761570707044
+model_id: m-a8633e69b34c4a93b696fa14bd9cf969
+model_type: null
+name: best_model
+source_run_id: 6c0632365ab74f95aad28d92f846fa6b
+status: 2
+status_message: null
